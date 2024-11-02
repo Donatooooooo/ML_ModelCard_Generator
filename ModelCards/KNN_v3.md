@@ -15,3 +15,14 @@
     
 - Training started at: 17:27:32 2024-11-02
 - Training ended at: 17:27:39 2024-11-02
+## How to use
+```
+trainAndLog(
+    dataset = dataset,
+    trainer = trainer,
+    experimentName = experiment,
+    datasetName = "brest_cancer.csv",
+    modelName = "Lorem Ipsum",
+    tags = {"dolor sit amet": "consectetur adipiscing elit"}
+)
+```
