@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/958641157061926969/cd2db33f725d4d18b5f479d8e290b24e/artifacts
+end_time: 1730568220427
+entry_point_name: ''
+experiment_id: '958641157061926969'
+lifecycle_stage: active
+run_id: cd2db33f725d4d18b5f479d8e290b24e
+run_name: intrigued-pug-314
+run_uuid: cd2db33f725d4d18b5f479d8e290b24e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730567965143
+status: 3
+tags: []
+user_id: donat
