@@ -26,11 +26,4 @@ integrate KNN 3
 ```
 
 ## Your Commands Below
-integrate KNN
-    /description.md
-    /how_To_Use.md
-
-integrate Random Forest
-    /description.md
-    /how_To_Use.md
 
