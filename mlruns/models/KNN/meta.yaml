@@ -1,5 +1,6 @@
-aliases: {}
+aliases:
+  champion: '3'
 creation_timestamp: 1730567935742
 description: ''
-last_updated_timestamp: 1730568844579
+last_updated_timestamp: 1730575755509
 name: KNN
