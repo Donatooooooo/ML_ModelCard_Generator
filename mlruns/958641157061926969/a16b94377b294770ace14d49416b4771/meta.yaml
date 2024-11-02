@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/958641157061926969/a16b94377b294770ace14d49416b4771/artifacts
+end_time: 1730568452174
+entry_point_name: ''
+experiment_id: '958641157061926969'
+lifecycle_stage: active
+run_id: a16b94377b294770ace14d49416b4771
+run_name: burly-toad-743
+run_uuid: a16b94377b294770ace14d49416b4771
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730568441641
+status: 3
+tags: []
+user_id: donat
