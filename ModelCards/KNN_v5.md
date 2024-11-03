@@ -1,0 +1,19 @@
+# KNN - v5
+## General Information 
+- Developed by: donat
+- Model Type: KNN
+- sklearn version: 1.5.2
+- Python version: 3.12.7
+## Training Details
+
+- Dataset: brest_cancer.csv
+- Training started at: 17:30:26 2024-11-02
+- Training ended at: 17:30:33 2024-11-02
+## Evaluation
+- `F1_micro score` 0.9649122807017544
+- `Recall` 0.9649122807017544
+- `F1_macro score` 0.9626596790042581
+- `Accuracy` 0.9649122807017544
+- `Precision` 0.9649122807017544
+## Description
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Nulla facilisi. Fusce tincidunt, odio sit amet venenatis tincidunt, justo purus bibendum risus, eu semper urna nisl in libero. Proin euismod risus ac lectus bibendum, id accumsan quam tristique.
