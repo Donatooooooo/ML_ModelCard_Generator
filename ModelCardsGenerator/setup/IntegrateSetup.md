@@ -26,4 +26,6 @@ integrate KNN 3
 ```
 
 ## Your Commands Below
+integrate KNN 5
+    /thisfiledoesnotexist.md
 
