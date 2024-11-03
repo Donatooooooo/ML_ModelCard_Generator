@@ -23,15 +23,13 @@ def generator():
 
         output.merge(generator.getOutput())
     except MlflowException as e:
-        output.error(str(e))
-        #output.error("Check provided URI: invalid format")
+        output.error(f"Check MLflow Server status: {str(e)}")
     except NoModelException as e:
         output.error(f"Check if models exist: {str(e)}")
     except FileNotFoundError as e:
         output.error(f"Check file path, {str(e).split('] ')[1]}")
     except Exception as e:
-        output.error(str(e))
-        #output.error(f"Exception caused by: {str(e)}")
+        output.error(f"Exception caused by: {str(e)}")
     finally:
         output.display()
 
@@ -46,7 +44,7 @@ def integrator():
 
         output.merge(generator.getOutput())
     except MlflowException as e:
-        output.error("Check provided URI: invalid format")
+        output.error(f"Check MLflow Server status: {str(e)}")
     except ParserError as e:
         output.error(f"Invalid file format in IntegrateSetup.md: {str(e)}. Unable to integrate")
     except ImpossibleIntegration as e:

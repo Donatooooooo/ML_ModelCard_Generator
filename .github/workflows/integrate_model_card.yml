@@ -63,7 +63,7 @@ jobs:
       - name: Install dependencies
         if: env.exists == 'true'
         run: |
-          pip install mlflow
+          pip install mlflow==2.16.2
           pip install jinja2
         
       - name: Force Integrate Model Cards
