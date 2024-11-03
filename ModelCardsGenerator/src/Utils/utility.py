@@ -6,13 +6,13 @@ PATH = "ModelCardsGenerator/src/Templates"
 
 def convertTime(unixTime):
     """
-    Convert Unix time in Human Time.
+    Convert Unix time in Human time.
     """
     return datetime.fromtimestamp(unixTime/1000.0).strftime('%H:%M:%S %Y-%m-%d')
 
 def extractInfoTags(tags):
     """
-    Extract relevant info fromm tags tracked in MLflow experiment.
+    Extract relevant info from tags tracked in MLflow experiment.
     """
     data_tags = json.loads(tags.get('mlflow.log-model.history', ''))
     flavors = data_tags[0]['flavors']
