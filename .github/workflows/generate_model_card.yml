@@ -2,6 +2,9 @@ name: Generate Model Card
 
 on:
   pull_request:
+    paths:
+      - 'mlruns/**'
+      - 'mlartifacts/**'
 
 permissions:
   pull-requests: write
