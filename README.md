@@ -36,14 +36,14 @@ The following repository contains a project designed to automate the cration of 
 # How to use
 
 ## Setup
-No complex procedures are required to run the software. To integrate it into your project, simply copy the subdirectory `ModelCardsGenerator/` and the subdirectory `.github/workflows/` into your main directory. The programme uses MLflow integration to collect the information needed to create Model Cards, so it is essential to use MLflow Tracking and Model Registry to store details about models and their versions.
+No complex procedures are required to run the software. To integrate it into your project, simply copy the subdirectory `ModelCardsGenerator/` and the subdirectory `.github/workflows/` into your main directory. The program uses MLflow integration to collect the information needed to create Model Cards, so it is essential to use MLflow Tracking and Model Registry to store details about models and their versions.
 
 **Important**: The software is designed to execute automatically via GitHub Actions when a pull request is created. Ensure that your repository is configured correctly to run workflows. To check this, go to _Settings>Actions_ and be sure "Allow all actions and reusable workflows" is check.
 
 Currently, the generation software is based on a local MLflow server. However, with a simple change in the code, it is possible to configure it to connect to a remote server. If you decide to run a server locally, it is necessary to store the information in the main directory of your project.
 
 ## Generation step
-The generation software is started automatically when a pull request is created if any changes are found in the MLflow storage files. It is not necessary to manually specify which models should be created: the software extracts the latest version of each model in the Model Registry. Should this solution not be optimal, it is possible to influence the behaviour of the programme by assigning the alias @champion to the version of the model whose Model Card is to be created using MLflow UI.
+The generation software is started automatically when a pull request is created if any changes are found in the MLflow storage files. It is not necessary to manually specify for which models Model Cards should be created: the software extracts the latest version of each model in the Model Registry. If this solution is not optimal, it is possible to influence the behaviour of the program by assigning the alias @champion to the version of the model whose Model Card is to be created using MLflow UI.
 
 To start MLFlow user interface:
 ```
@@ -96,7 +96,7 @@ integrate <model_name> <version>
    /your_file.md
 ```
 
-For more information read file `IntegrateSetup.md`.
+For more information read file `ModelCardsGenerator/setup/IntegrateSetup.md`.
 
 # Model Card structure
 All Model Cards follow a standardised structure and are generated using a predefined template. In the absence of specific model information, the Model Card structure adapts, ensuring that each card includes the core sections, even though some information may not be present.
