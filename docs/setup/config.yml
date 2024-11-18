@@ -1,0 +1,17 @@
+structure Random Forest:
+  - Description:
+      file: description.md
+  - General Information
+  - Training Details
+  - How to use:
+      file: instructions.md
+  - Evaluation
+
+structure KNN:
+  - Description:
+      file: description.md
+  - General Information
+  - Training Details
+  - How to use:
+      file: instructions.md
+  - Evaluation
