@@ -127,7 +127,7 @@ class ModelCardGenerator:
             return None
 
         if config:
-            instance = templateRender("title_template.md", self.title)
+            instance = templateRender("title_template.jinja", self.title)
         
             processed = set()
             for section in config.getSections():
