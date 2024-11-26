@@ -64,15 +64,14 @@ class ModelCardGenerator:
 
         # Extract information through the run
         run = self.client.get_run(runID)
-        
         self.name = str(model.name.split("_")[1] 
                             if "_" in model.name else model.name)
-
         name = self.name
         version = model.version
         params = run.data.params
         author = run.info.user_id
         metrics = run.data.metrics
+        estimator = run.data.tags.get("estimator_name", None)
         py, lib, libv = extractInfoTags(run.data.tags)
         startTime = convertTime(run.info.start_time)
         endTime = convertTime(run.info.end_time)
@@ -85,6 +84,8 @@ class ModelCardGenerator:
             self.output.warning(f"{info}: Missing metrics in Model Card generation")
         if not datasetName:
             self.output.warning(f"{info}: Missing dataset information in Model Card generation")
+        if not estimator:
+            self.output.warning(f"{info}: Missing estimator information in Model Card generation")
         if "" in [author, py, lib, libv, startTime, endTime]:
             self.output.warning(f"{info}: Missing info in Model Card generation, check the Model Card for any details.")
 
@@ -95,7 +96,7 @@ class ModelCardGenerator:
         
         self.generalinformation = {
             "author": author,
-            "modelType": name,
+            "modelType": estimator,
             "library": lib,
             "libraryVersion": libv,
             "pythonVersion": py,
@@ -139,7 +140,7 @@ class ModelCardGenerator:
                         with open(f"docs/setup/{file}", 'r') as part:
                             text = part.read()        
                         assemble = {"title": section, "text": text}    
-                        instance += templateRender("_part.md", assemble)
+                        instance += templateRender("_part.jinja", assemble)
                         processed.add(section.lower())
                         auto = False
                         break
@@ -150,7 +151,7 @@ class ModelCardGenerator:
                     part = section.lower()
                     if part in basic and part not in processed:
                         file = part.replace(' ', '')
-                        template = f"{file}_template.md"
+                        template = f"{file}_template.jinja"
                         attribute = getattr(self, file)
                         if attribute:
                             instance += templateRender(template, attribute)
@@ -159,7 +160,7 @@ class ModelCardGenerator:
         else:
             # Default if no configuration is given
             data = self.title | self.generalinformation | self.trainingdetails | self.evaluation
-            instance = templateRender("modelCard_template.md", data)
+            instance = templateRender("modelCard_template.jinja", data)
             out = f"No configuration provided for _{self.name}_: generated a deafult Model Card"
             self.output.warning(out)
 
