@@ -1,17 +1,8 @@
-structure Random Forest:
-  - Description:
-      file: description.md
-  - General Information
-  - Training Details
-  - How to use:
-      file: instructions.md
-  - Evaluation
-
-structure KNN:
-  - Description:
-      file: description.md
-  - General Information
-  - Training Details
-  - How to use:
-      file: instructions.md
-  - Evaluation
+# structure <model_name>:
+#   - <your_section>:
+#       file: <your_file>.md
+#   - General Information
+#   - Training Details
+#   - <your_section>:
+#       file: <your_file>.md
+#   - Evaluation

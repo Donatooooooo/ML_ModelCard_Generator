@@ -40,7 +40,7 @@ def getPath(data):
     fname = f"{part}_v{data.get('version')}.md"
     root = os.path.abspath(os.path.join(os.path.join(
         os.path.dirname(__file__), '..'), '..'))
-    ModelCards_directory = os.path.join(root, 'ModelCards')
+    ModelCards_directory = os.path.join(root, 'modelcards')
     path = os.path.join(ModelCards_directory, fname)
     return path, fname
 
