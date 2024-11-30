@@ -85,7 +85,7 @@ structure ESNE:
       file: use.md
   - Evaluation
 
-structure Istological Grading System:
+structure Histological Grading System:
   - Description:
       file: IGSdetails.md
   - General Information
