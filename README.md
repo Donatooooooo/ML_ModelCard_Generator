@@ -7,9 +7,10 @@ The following repository contains a project designed to automate the cration of 
     ├── LICENSE
     ├── Makefile                                        <- Makefile with commands like `make data` or `make train`
     ├── README.md                                       <- The top-level README for developers using this project.
+    ├── .github/workflows                               <- Workflow configuration directory.
     ├── data                                            <- Data used in this project.
     ├── docs                                            <- Main software for automated model card creation.
-    |   ├───ModelCards                                  <- Model Cards generated.
+    |   ├───modelcards                                  <- Model Cards generated.
     |   ├───setup                                       <- Files to setup the Model Cards generation.
     |   |       config.yml                              <- File used for setup of generation. 
     |   └───src                      
