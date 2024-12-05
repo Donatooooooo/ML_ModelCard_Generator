@@ -1,6 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
-import json, os
+import json, math, os
 
 PATH = "docs/src/Templates"
 
@@ -53,31 +53,12 @@ def templateRender(template, data):
     template = environment.get_template(template)
     return template.render(data)
 
-def clean(path):
+def refine(metrics):
     """
-    Parse a Model Card in order to check if it has been integrated.
-    If it is, discard changes.
+    Refine metrics retrieved from a MLflow's experiment.
     """
-
-    allowed_sections = ["## General Information", "## Training Details", "## Evaluation"]
-    filtered_content = []
-    keep_content = True
-
-    with open(path, 'r') as file:
-        for line in file:
-            if keep_content and line.startswith("# "):
-                filtered_content.append(line)
-                keep_content = False
-                continue
-            
-            if line.strip() in allowed_sections:
-                keep_content = True
-            elif line.startswith("##"):
-                keep_content = False
-            
-            if keep_content:
-                filtered_content.append(line)
-    
-    output = ''.join(filtered_content)
-    with open(path, 'w') as modelCard:
-        modelCard.write(output)
+    refined = {}
+    factor = 10 ** 5
+    for key, value in metrics.items():
+        refined[key] = math.trunc(value * factor) / factor
+    return refined
