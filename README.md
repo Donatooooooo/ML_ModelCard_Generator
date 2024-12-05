@@ -1,4 +1,4 @@
-# Machine Learning Model Cards Generator
+# Model Card Generator
 The following repository contains a project designed to automate the cration of Model Cards, a type of documentation for Machine Learning models. With standardized experiment tracking, the software automates documentation creation by adopting CI practices to get Model Cards up-to-date throughout the model lifecycle. Through the use of MLFlow and GitHub Actions, the system can document models automatically, keeping track of crucial information to ensure transparency, reliability and explainability.
 
 # Project Organization
@@ -50,7 +50,7 @@ The following repository contains a project designed to automate the cration of 
 # User Guide
 No complex procedures are required to run the software. The program uses MLflow integration to collect the information needed to create Model Cards, so it is essential to use MLflow Tracking and Model Registry to store details about models and their versions. The software is designed to execute automatically via GitHub Actions. Ensure that your repository is configured correctly to run workflows. To check this, go to _Settings>Actions_ and be sure "Allow all actions and reusable workflows" is check.
 
-The generation software is started automatically when the last commit in a pull request is "modelcards". It is not necessary to manually specify for which models Model Cards should be created: the software extracts the latest version of each model in the Model Registry. If this solution is not optimal, it is possible to influence the behaviour of the program by assigning the alias @champion to the version of the model whose Model Card is to be created using MLflow UI.
+The generation software is started automatically when changes are detected in the `docs/setup/**` or `src/models/**` directories. It is not necessary to manually specify for which models Model Cards should be created: the software extracts the latest version of each model in the Model Registry. If this solution is not optimal, it is possible to influence the behaviour of the program by assigning the alias @champion to the version of the model whose Model Card is to be created using MLflow UI.
 
 ## Configuring Model Cards
 You can predefine Model Card configurations before starting the program by modifying the config.yml file located in docs/setup/. This file is written in YAML format, which ensures that your IDE can validate the syntax and notify you of potential errors. Follow the steps below to configure the Model Cards:
