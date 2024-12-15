@@ -1,6 +1,6 @@
 from mlflow.tracking import MlflowClient
 from Utils.exceptions import NoModelException
-from Utils.utility import convertTime, extractInfoTags
+from Utils.utility import convertTime, extractInfoTags, refine
 from Utils.utility import extratDatasetName, getPath, templateRender
 from Utils.parser import Config
 from Utils.logger import Logger
@@ -70,8 +70,8 @@ class ModelCardGenerator:
         version = model.version
         params = run.data.params
         author = run.info.user_id
-        metrics = run.data.metrics
         estimator = run.data.tags.get("estimator_name", None)
+        metrics = refine(run.data.metrics)
         py, lib, libv = extractInfoTags(run.data.tags)
         startTime = convertTime(run.info.start_time)
         endTime = convertTime(run.info.end_time)
